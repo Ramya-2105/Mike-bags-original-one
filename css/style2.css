@@ -1,0 +1,132 @@
+@keyframes appear
+{
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 0;
+        scale: 1;
+    } 
+}
+.container2{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 30%;
+}
+
+body
+{
+    background: radial-gradient(#fff, #f3c6af);
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(181, 228, 222));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+
+}
+
+*{
+   
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container2 
+{
+    width: 100%;
+    min-height: 100vh;
+}
+.flex-22 
+{
+    width:80%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 100px 0px;
+}
+.image2 
+{
+    width: 40%;
+}
+.image2 img
+{
+    width: 70%;
+    height: auto;
+}
+.content2
+{
+    width: 60%;
+}
+.content2 h1
+{
+    color: hotpink;
+    font-size: 65px;
+}
+.content2 h2
+{
+    color: #2a2a2a;
+    margin-top: 30px;
+    font-size: 40px;
+}
+.content2 p 
+{
+    font-size: 22px;
+    line-height: 1.5;
+    color: #7e7e7e;
+    margin-top: 30px;
+}
+.content2 a
+{
+    text-decoration: none;
+    font-size: 22px;
+    display: inline-block;
+    background-color: red;
+    padding: 10px 10px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.content2 a:hover
+{
+    background-color: #005f47;
+    transition: 0.5s ease;
+}
+@media screen and (max-width: 768px)
+{
+    .flex-22{
+        width:100%;
+        flex-direction: column;
+        padding: 45px 0px;
+    }
+    .content2{
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
+    .content2 h1{
+        font-size: 35px;
+    }
+    .content2 h2{
+        font-size: 30px;
+    }
+    .content2 p{
+        font-size: 19px;
+    }
+    .content2 a{
+        font-size: 17px;
+        padding: 8px 8px;
+    }
+    .image2 
+    {
+        width: 80%;
+        margin: 40px auto;
+        display: block;
+    }
+}
