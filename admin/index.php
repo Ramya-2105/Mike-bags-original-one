@@ -3,7 +3,8 @@ require('inc/essentials.php');
 require('inc/db_config.php'); 
 session_start();
 session_regenerate_id(true);
-if ((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
+if ((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) 
+{
     header("Location: dashboard.php");  // Redirect to dashboard page if not logged in
     exit;  // Always call exit after header to stop further script execution
 }
@@ -73,7 +74,7 @@ if($res->num_rows==1) {
     
     }
     else {
-        alert('erroe','Login failed - invalid login credentials');
+        alert('error','Login failed - invalid login credentials');
     }
 }
     ?>
