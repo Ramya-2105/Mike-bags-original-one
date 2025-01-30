@@ -1,3 +1,31 @@
+<?php
+$insert=false;
+$_SERVER="localhost";
+$username= "root";
+$password= "";
+$database= "contact";
+$con= mysqli_connect($_SERVER,$username,$password,$database);
+if(!$con)
+    {
+      die("connection is failed". mysqli_connect_error());
+    }
+    $fname = isset($_POST['fname']) ? $_POST['fname']: '';
+    $lname = isset($_POST['fname']) ? $_POST['lname']: '';
+    $phone = isset($_POST['fname']) ? $_POST['phone']: '';
+    $email = isset($_POST['fname']) ? $_POST['email']: '';
+    $message = isset($_POST['fname']) ? $_POST['message']: '';
+    $sql  =  "INSERT INTO `contact` (`fname`, `lname`, `phone`, `email`, `message`,`datetime`)
+    VALUES ('$fname', '$lname','$phone', '$email',' $message', current_timestamp())"; 
+    if($con->query($sql)=== true)
+    {
+        $insert=true;
+    }
+    else{
+        echo "ERROR: $sql <br> $con->error";
+    }
+    $con->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,23 +88,23 @@
                     </ul>
                 </div>
                 <div class="form-wrap">
-                    <form action="#" method="POST">
+                    <form action="contact.php" method="POST">
                         <h2 class="form-title">Send us a message</h2>
                         <div class="form-fields">
                             <div class="form-group">
-                                <input type="text" class="fname" placeholder="First Name">
+                                <input type="text" class="fname" name="fname" id="fname" placeholder="First Name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="lname" placeholder="Last Name">
+                                <input type="text" class="lname" name="lname" id="lname" placeholder="Last Name">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="email" placeholder="Mail">
+                                <input type="email" class="email" name="email" id="email" placeholder="Mail">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="phone" placeholder="Phone">
+                                <input type="number" class="phone" name="phone" id="phone" placeholder="Phone">
                             </div>
                             <div class="form-group">
-                                <textarea name="message" id="" placeholder="Write your message"></textarea>
+                                <textarea class="message" name="message" id="message" placeholder="Write your message"></textarea>
                             </div>
                         </div>
                         <input type="submit" value="Send message" class="submit-button">
